@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHIMP SODA | Unleash Your Primal Fizz</title>
+  <meta name="description" content="Chimp Soda is the wild prebiotic & adaptogenic craft soda made with real fruit, 4g sugar, and zero monkey business. Crack one open and awaken your wild side.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,800&family=Space+Grotesk:wght@500;700;800;900&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/jpeg" href="assets/badge.jpg">
+</head>
+<body data-flavor="banana">
+
+  <!-- Interactive Fizzy Canvas Background -->
+  <canvas id="bubble-canvas"></canvas>
+
+  <!-- Ambient Dynamic Aura Glow -->
+  <div class="ambient-glow" id="ambient-glow"></div>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Special Offers">
+    <div class="marquee-track">
+      <div class="marquee-item">⚡ FREE WILD SHIPPING ON ORDERS OVER $40 ⚡</div>
+      <div class="marquee-item">🐒 ZERO ARTIFICIAL SWEETENERS 🐒</div>
+      <div class="marquee-item">🔥 CLINICALLY DOSED PREBIOTICS & BOTANICALS 🔥</div>
+      <div class="marquee-item">🌴 ONLY 4G SUGAR • 35 CALORIES 🌴</div>
+      <div class="marquee-item">⚡ FREE WILD SHIPPING ON ORDERS OVER $40 ⚡</div>
+      <div class="marquee-item">🐒 ZERO ARTIFICIAL SWEETENERS 🐒</div>
+      <div class="marquee-item">🔥 CLINICALLY DOSED PREBIOTICS & BOTANICALS 🔥</div>
+      <div class="marquee-item">🌴 ONLY 4G SUGAR • 35 CALORIES 🌴</div>
+    </div>
+  </aside>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" id="brand-logo-link">
+        <img src="assets/badge.jpg" alt="Chimp Soda Mascot" class="nav-mascot">
+        <span class="logo-text">CHIMP<span class="logo-accent">SODA</span></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#flavors" class="nav-link">Flavors</a>
+        <a href="#benefits" class="nav-link">The Primal Formula</a>
+        <a href="#compare" class="nav-link">The Rivalry</a>
+        <a href="#reviews" class="nav-link">Troop Hype</a>
+        <button type="button" class="nav-pill-btn" id="quiz-trigger-btn">
+          <span>🎯 Flavor Quiz</span>
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Sound Effect Toggle -->
+        <button type="button" class="sound-toggle-btn" id="sound-toggle" aria-label="Toggle Sound Effects" title="Toggle Fizz & Pop Sounds">
+          <div class="sound-waves" id="sound-waves">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <span class="sound-label" id="sound-status">Sound FX</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button type="button" class="cart-btn" id="cart-toggle-btn" aria-label="View Cart">
+          <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-text">Cart</span>
+          <span class="cart-counter" id="nav-cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        
+        <!-- Left Hero Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span class="badge-text" id="hero-badge-text">⚡ NOW FEATURING: PSYCHO BANANA</span>
+          </div>
+
+          <h1 class="hero-headline">
+            UNLEASH YOUR <br>
+            <span class="gradient-text glitch-effect" id="hero-title-flavor">PRIMAL FIZZ.</span>
+          </h1>
+
+          <p class="hero-subline" id="hero-subtext">
+            Crafted for modern primates who reject boring water and synthetic junk. 
+            Real botanical juices, crisp micro-bubbles, 4g organic cane sugar, and Lion's Mane focus.
+          </p>
+
+          <!-- Quick Stats Pills -->
+          <div class="flavor-highlights" id="hero-highlights">
+            <div class="highlight-pill">
+              <span class="pill-icon">🧬</span>
+              <span class="pill-text">6g Prebiotic Fiber</span>
+            </div>
+            <div class="highlight-pill">
+              <span class="pill-icon">🔥</span>
+              <span class="pill-text">35 Calories</span>
+            </div>
+            <div class="highlight-pill">
+              <span class="pill-icon">🧠</span>
+              <span class="pill-text">Adaptogen Fuel</span>
+            </div>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-cta-group">
+            <button type="button" class="btn-primary-flavor" id="hero-add-to-cart-btn">
+              <span class="btn-content">
+                <span class="btn-title">SNAG A 12-PACK</span>
+                <span class="btn-price" id="hero-pack-price">$34.99 • $2.91/can</span>
+              </span>
+              <span class="btn-arrow">→</span>
+            </button>
+
+            <button type="button" class="btn-secondary-hollow" id="crack-sound-btn" title="Click to hear the fizzy can crack!">
+              <span class="can-icon">🥫</span>
+              <span>Crack A Can</span>
+            </button>
+          </div>
+
+          <!-- Flavor Switcher Selector Pills -->
+          <div class="flavor-selector-bar">
+            <span class="selector-label">SELECT FLAVOR:</span>
+            <div class="flavor-tabs" role="tablist">
+              <button class="flavor-tab active" data-flavor="banana" role="tab" aria-selected="true">
+                <span class="tab-emoji">🍌</span>
+                <span class="tab-name">Psycho Banana</span>
+              </button>
+              <button class="flavor-tab" data-flavor="berry" role="tab" aria-selected="false">
+                <span class="tab-emoji">🍓</span>
+                <span class="tab-name">Primal Berry</span>
+              </button>
+              <button class="flavor-tab" data-flavor="mango" role="tab" aria-selected="false">
+                <span class="tab-emoji">🥭</span>
+                <span class="tab-name">Mango Gorilla</span>
+              </button>
+              <button class="flavor-tab" data-flavor="citrus" role="tab" aria-selected="false">
+                <span class="tab-emoji">🍋</span>
+                <span class="tab-name">Electric Yuzu</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual 3D Showcase -->
+        <div class="hero-visual">
+          <div class="can-stage" id="can-stage">
+            <div class="can-glow" id="can-glow-disc"></div>
+            
+            <!-- 3D Tilting Card with Can Render -->
+            <div class="can-tilt-wrapper" id="can-tilt-wrapper">
+              <img src="assets/banana.jpg" alt="Chimp Soda Can Render" class="can-render-img" id="hero-can-img">
+              
+              <!-- Floating Dynamic Stickers -->
+              <div class="floating-sticker sticker-top" id="sticker-top">
+                <span class="sticker-emoji">🍌</span>
+                <div class="sticker-info">
+                  <strong>Wild Infusion</strong>
+                  <small id="sticker-top-text">Organic Banana & Mint</small>
+                </div>
+              </div>
+
+              <div class="floating-sticker sticker-bottom" id="sticker-bottom">
+                <span class="sticker-emoji">⚡</span>
+                <div class="sticker-info">
+                  <strong>Cognitive Kick</strong>
+                  <small id="sticker-bottom-text">Organic Lion's Mane Extract</small>
+                </div>
+              </div>
+
+              <!-- Interactive Floating Mascot Sticker -->
+              <div class="floating-mascot-sticker" id="mascot-sticker">
+                <img src="assets/badge.jpg" alt="Official Chimp Seal" class="sticker-badge-img">
+              </div>
+            </div>
+
+            <!-- Stage Interaction Hint -->
+            <div class="stage-hint">
+              <span>✦ MOVE CURSOR TO TILT CAN • CLICK TO POP FIZZ ✦</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LIVE MARQUEE STRIP -->
+    <section class="ticker-strip">
+      <div class="ticker-track">
+        <span>🍌 PSYCHO BANANA</span>
+        <span class="ticker-star">★</span>
+        <span>🍓 PRIMAL BERRY</span>
+        <span class="ticker-star">★</span>
+        <span>🥭 MANGO GORILLA</span>
+        <span class="ticker-star">★</span>
+        <span>🍋 ELECTRIC YUZU</span>
+        <span class="ticker-star">★</span>
+        <span>100% WILD INGREDIENTS</span>
+        <span class="ticker-star">★</span>
+        <span>NO REFINED SUGAR</span>
+        <span class="ticker-star">★</span>
+        <span>MICROBIOME POWER</span>
+        <span class="ticker-star">★</span>
+        <span>🍌 PSYCHO BANANA</span>
+        <span class="ticker-star">★</span>
+        <span>🍓 PRIMAL BERRY</span>
+        <span class="ticker-star">★</span>
+        <span>🥭 MANGO GORILLA</span>
+        <span class="ticker-star">★</span>
+        <span>🍋 ELECTRIC YUZU</span>
+        <span class="ticker-star">★</span>
+      </div>
+    </section>
+
+    <!-- FLAVORS SHOWCASE SECTION -->
+    <section class="flavors-section" id="flavors">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="subheading-tag">UNFILTERED BOTANICALS</div>
+          <h2 class="section-title">THE PRIMAL LINEUP</h2>
+          <p class="section-subtitle">
+            Every can is spiked with gut-nurturing prebiotics, cold-pressed botanical essences, and adaptogens.
+            No artificial sucralose, no high fructose corn syrup, no nonsense.
+          </p>
+        </div>
+
+        <div class="flavor-grid">
+          <!-- Card 1: Banana -->
+          <article class="flavor-card" data-flavor-id="banana">
+            <div class="flavor-card-image-wrap">
+              <img src="assets/banana.jpg" alt="Psycho Banana Blitz" class="flavor-card-img" loading="lazy">
+              <span class="flavor-card-tag banana-tag">🍌 BESTSELLER</span>
+            </div>
+            <div class="flavor-card-body">
+              <div class="flavor-card-meta">
+                <span class="card-calories">35 CAL</span>
+                <span class="card-sugar">4G SUGAR</span>
+                <span class="card-fiber">6G FIBER</span>
+              </div>
+              <h3 class="flavor-card-title">Psycho Banana Blitz</h3>
+              <p class="flavor-card-desc">
+                Creamy Cavendish banana purée meets electric sparkling citrus and crisp garden mint, supercharged with Lion's Mane.
+              </p>
+              <div class="flavor-notes">
+                <span class="note-chip">Sweet Banana</span>
+                <span class="note-chip">Crisp Mint</span>
+                <span class="note-chip">Vanilla Cream</span>
+              </div>
+              <div class="card-action-row">
+                <span class="card-price">$34.99 <small>/ 12pk</small></span>
+                <button type="button" class="quick-add-btn" data-flavor="banana">
+                  <span>+ Add to Stash</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Berry -->
+          <article class="flavor-card" data-flavor-id="berry">
+            <div class="flavor-card-image-wrap">
+              <img src="assets/berry.jpg" alt="Primal Berry Blast" class="flavor-card-img" loading="lazy">
+              <span class="flavor-card-tag berry-tag">🍓 ANTIOXIDANT</span>
+            </div>
+            <div class="flavor-card-body">
+              <div class="flavor-card-meta">
+                <span class="card-calories">30 CAL</span>
+                <span class="card-sugar">3G SUGAR</span>
+                <span class="card-fiber">6G FIBER</span>
+              </div>
+              <h3 class="flavor-card-title">Primal Berry Blast</h3>
+              <p class="flavor-card-desc">
+                Explosive wild mountain raspberries, crushed blackberries, and neon dragonfruit spiked with calming Ashwagandha.
+              </p>
+              <div class="flavor-notes">
+                <span class="note-chip">Wild Raspberry</span>
+                <span class="note-chip">Dragonfruit</span>
+                <span class="note-chip">Blackberry Tart</span>
+              </div>
+              <div class="card-action-row">
+                <span class="card-price">$34.99 <small>/ 12pk</small></span>
+                <button type="button" class="quick-add-btn" data-flavor="berry">
+                  <span>+ Add to Stash</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Mango -->
+          <article class="flavor-card" data-flavor-id="mango">
+            <div class="flavor-card-image-wrap">
+              <img src="assets/mango.jpg" alt="Mango Gorilla Punch" class="flavor-card-img" loading="lazy">
+              <span class="flavor-card-tag mango-tag">🥭 FAN FAVORITE</span>
+            </div>
+            <div class="flavor-card-body">
+              <div class="flavor-card-meta">
+                <span class="card-calories">35 CAL</span>
+                <span class="card-sugar">4G SUGAR</span>
+                <span class="card-fiber">6G FIBER</span>
+              </div>
+              <h3 class="flavor-card-title">Mango Gorilla Punch</h3>
+              <p class="flavor-card-desc">
+                Succulent sun-drenched Alphonso mango and tangy passionfruit seeds with green tea polyphenols for clean jungle clarity.
+              </p>
+              <div class="flavor-notes">
+                <span class="note-chip">Alphonso Mango</span>
+                <span class="note-chip">Passionfruit</span>
+                <span class="note-chip">Golden Fizz</span>
+              </div>
+              <div class="card-action-row">
+                <span class="card-price">$34.99 <small>/ 12pk</small></span>
+                <button type="button" class="quick-add-btn" data-flavor="mango">
+                  <span>+ Add to Stash</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Citrus -->
+          <article class="flavor-card" data-flavor-id="citrus">
+            <div class="flavor-card-image-wrap">
+              <img src="assets/citrus.jpg" alt="Electric Yuzu Citrus" class="flavor-card-img" loading="lazy">
+              <span class="flavor-card-tag citrus-tag">🍋 ULTRA REFRESH</span>
+            </div>
+            <div class="flavor-card-body">
+              <div class="flavor-card-meta">
+                <span class="card-calories">25 CAL</span>
+                <span class="card-sugar">2G SUGAR</span>
+                <span class="card-fiber">6G FIBER</span>
+              </div>
+              <h3 class="flavor-card-title">Electric Yuzu Citrus</h3>
+              <p class="flavor-card-desc">
+                High-voltage tart Japanese Yuzu, Persian lime, and cold-extracted lemon peel infused with Panax Ginseng vitality.
+              </p>
+              <div class="flavor-notes">
+                <span class="note-chip">Tart Yuzu</span>
+                <span class="note-chip">Persian Lime</span>
+                <span class="note-chip">Zesty Zing</span>
+              </div>
+              <div class="card-action-row">
+                <span class="card-price">$34.99 <small>/ 12pk</small></span>
+                <button type="button" class="quick-add-btn" data-flavor="citrus">
+                  <span>+ Add to Stash</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Variety Pack Banner -->
+        <div class="variety-banner">
+          <div class="variety-info">
+            <span class="variety-badge">👑 ULTIMATE DISCOVERY</span>
+            <h3>Can't pick a favorite primate?</h3>
+            <p>Get the <strong>Jungle Variety 12-Pack</strong>: 3 cans of each flavor, plus exclusive Chimp holographic stickers.</p>
+          </div>
+          <button type="button" class="btn-variety-add" id="variety-pack-btn">
+            <span>Get Jungle Variety Pack • $36.99</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE PRIMAL FORMULA (BENEFITS) SECTION -->
+    <section class="benefits-section" id="benefits">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="subheading-tag">ANATOMY OF A WILD CAN</div>
+          <h2 class="section-title">THE PRIMAL FORMULA</h2>
+          <p class="section-subtitle">
+            Engineered by beverage alchemists, approved by jungle royalty. Real science meets rebellious taste.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon-wrap">🦠</div>
+            <h3>Agave Inulin Prebiotics</h3>
+            <p>Feeds healthy microbiome bacteria in your gut to support smooth digestion and zero soda bloat.</p>
+            <span class="benefit-stat">6g / Can</span>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon-wrap">🌿</div>
+            <h3>Primal Adaptogen Fuel</h3>
+            <p>Infused with functional botanicals like Lion's Mane, Ashwagandha, and Green Tea extract for laser mental flow.</p>
+            <span class="benefit-stat">Active Botanicals</span>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon-wrap">🍊</div>
+            <h3>100% Real Cold-Pressed Fruit</h3>
+            <p>Never made with mysterious "natural flavor #48". We squeeze actual fruit harvested at peak sweetness.</p>
+            <span class="benefit-stat">Pure Juice</span>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon-wrap">🚫</div>
+            <h3>Zero Artificial Sweeteners</h3>
+            <p>No aspartame, no sucralose, no erythritol cooling aftertaste. Just 4g organic cane sugar and real botanicals.</p>
+            <span class="benefit-stat">Clean Fuel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE RIVALRY (COMPARISON) SECTION -->
+    <section class="compare-section" id="compare">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="subheading-tag">TRUTH IN A CAN</div>
+          <h2 class="section-title">CHIMP VS. THE OLD SODA GIANTS</h2>
+          <p class="section-subtitle">
+            See how the wild primate formula crushes traditional chemical sodas and boring canned seltzers.
+          </p>
+        </div>
+
+        <div class="table-card">
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th class="table-feature-col">Nutrition Metrics</th>
+                  <th class="table-chimp-col">
+                    <div class="table-header-chimp">
+                      <img src="assets/badge.jpg" alt="Chimp" class="table-badge-img">
+                      <span>CHIMP SODA</span>
+                    </div>
+                  </th>
+                  <th>Traditional Soda</th>
+                  <th>Boring Hard/Flavored Seltzers</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Total Added Sugar</td>
+                  <td class="chimp-win"><strong>4g (Organic)</strong></td>
+                  <td class="bad-stat">39g (High Fructose)</td>
+                  <td>0g (Fake Sweetener)</td>
+                </tr>
+                <tr>
+                  <td>Gut Prebiotics</td>
+                  <td class="chimp-win"><strong>6g Plant Prebiotic</strong></td>
+                  <td class="bad-stat">0g</td>
+                  <td>0g</td>
+                </tr>
+                <tr>
+                  <td>Calories</td>
+                  <td class="chimp-win"><strong>25 - 35 Cal</strong></td>
+                  <td class="bad-stat">150+ Cal</td>
+                  <td>0 - 20 Cal</td>
+                </tr>
+                <tr>
+                  <td>Functional Adaptogens</td>
+                  <td class="chimp-win"><strong>Lion's Mane & Ashwagandha</strong></td>
+                  <td class="bad-stat">None</td>
+                  <td>None</td>
+                </tr>
+                <tr>
+                  <td>Flavor Profile</td>
+                  <td class="chimp-win"><strong>Mouthwatering Explosion</strong></td>
+                  <td>Syrupy Sickly Sweet</td>
+                  <td>Tastes like Fruit Whispered</td>
+                </tr>
+                <tr>
+                  <td>Primal Swagger</td>
+                  <td class="chimp-win"><strong>100% Gorilla Mode</strong></td>
+                  <td class="bad-stat">0%</td>
+                  <td class="bad-stat">0%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS & TROOP HYPE SECTION -->
+    <section class="reviews-section" id="reviews">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="subheading-tag">COMMUNITY PRAISE</div>
+          <h2 class="section-title">WHAT THE TROOP IS SAYING</h2>
+          <div class="overall-rating">
+            <div class="rating-stars">★★★★★</div>
+            <span class="rating-number">4.9 / 5</span>
+            <span class="rating-count">Based on 3,420+ Wild Soda Reviews</span>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "Psycho Banana sounded unhinged, but holy monkey is it delicious. It's like cold banana cream pie with fizzy bubbles. My daily 2pm brain fog is gone."
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">🐒</div>
+              <div>
+                <strong>Leo M.</strong>
+                <small>Verified Chimpanzee • Psycho Banana Fan</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "I ditched energy drinks and synthetic diet colas for Chimp Soda. The Yuzu Citrus gives such a crisp slap of refreshment without any bloat."
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">⚡</div>
+              <div>
+                <strong>Maya S.</strong>
+                <small>Verified Buyer • Electric Yuzu Fan</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "Ordered the 12-pack for our tech studio. The whole fridge was cleared in 48 hours. Primal Berry is an absolute masterpiece."
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">🚀</div>
+              <div>
+                <strong>Julian K.</strong>
+                <small>Verified Buyer • Primal Berry Fan</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Press Quotes Bar -->
+        <div class="press-strip">
+          <div class="press-item">
+            <em>"The most audacious craft soda since the invention of fizz."</em>
+            <span>— URBAN BEVERAGE DAILY</span>
+          </div>
+          <div class="press-item">
+            <em>"Olipop and Poppi just met their rebellious punk cousin."</em>
+            <span>— TRENDHUNTER EATS</span>
+          </div>
+          <div class="press-item">
+            <em>"Proof that functional gut health drinks don't have to taste like grass."</em>
+            <span>— MODERN TASTEMAKER</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+      <div class="section-container faq-container">
+        <div class="section-header">
+          <div class="subheading-tag">CURIOSITY KILLED THE CAT, NOT THE CHIMP</div>
+          <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+        </div>
+
+        <div class="faq-accordion">
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>What makes Chimp Soda actually functional?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Each can is fortified with 6 grams of plant-based prebiotic fiber (from chicory root and organic blue agave) which feeds your gut microbiome, along with organic adaptogens (like Lion's Mane mushroom extract and Ashwagandha) to promote cognitive clarity and stress resilience.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Does Psycho Banana taste like real bananas?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Yes! We use real organic Cavendish banana purée complemented by a dash of crushed spearmint and vanilla bean. It tastes like a fizzy, creamy tropical island dream rather than artificial candy flavor.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Is Chimp Soda vegan, gluten-free, and non-GMO?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                100% yes to all three! We use zero animal products, zero wheat or gluten ingredients, and every fruit and botanical is strictly non-GMO project verified.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How does shipping work?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Orders over $40 get free express shipping nationwide. All orders are packed in 100% recyclable insulated cardboard and shipped within 24 hours from our carbon-neutral fulfillment hubs.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER CTA -->
+    <section class="newsletter-section">
+      <div class="section-container">
+        <div class="newsletter-card">
+          <div class="newsletter-mascot">
+            <img src="assets/badge.jpg" alt="Chimp Soda Mascot" class="newsletter-badge-img">
+          </div>
+          <div class="newsletter-content">
+            <span class="newsletter-tag">JOIN THE TROOP</span>
+            <h2>GET 15% OFF YOUR FIRST CRACK</h2>
+            <p>Subscribe for secret flavor drops, VIP merch access, and zero corporate spam.</p>
+            <form class="newsletter-form" id="newsletter-form">
+              <input type="email" placeholder="Enter your primate email..." required class="newsletter-input" id="newsletter-email">
+              <button type="submit" class="newsletter-submit">Unlock 15% Off</button>
+            </form>
+            <div class="newsletter-status" id="newsletter-feedback"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="section-container footer-content">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <img src="assets/badge.jpg" alt="Chimp Soda Mascot" class="nav-mascot">
+          <span class="logo-text">CHIMP<span class="logo-accent">SODA</span></span>
+        </div>
+        <p class="footer-tagline">
+          Rebel soda for the modern jungle. Keep it fizzy, keep it primal.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Instagram">📸</a>
+          <a href="#" class="social-icon" aria-label="TikTok">🎵</a>
+          <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-icon" aria-label="Discord">💬</a>
+        </div>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Flavors</h4>
+        <ul>
+          <li><a href="#" class="footer-flavor-link" data-flavor="banana">Psycho Banana</a></li>
+          <li><a href="#" class="footer-flavor-link" data-flavor="berry">Primal Berry</a></li>
+          <li><a href="#" class="footer-flavor-link" data-flavor="mango">Mango Gorilla</a></li>
+          <li><a href="#" class="footer-flavor-link" data-flavor="citrus">Electric Yuzu</a></li>
+          <li><a href="#" id="footer-variety-link">Jungle Variety Pack</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Troop Info</h4>
+        <ul>
+          <li><a href="#benefits">The Primal Formula</a></li>
+          <li><a href="#compare">Comparison</a></li>
+          <li><a href="#reviews">Customer Hype</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#" id="footer-quiz-link">Take Flavor Quiz</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Mission</h4>
+        <ul>
+          <li><a href="#">Carbon Neutral Shipping</a></li>
+          <li><a href="#">Primate Habitat Fund (1%)</a></li>
+          <li><a href="#">Wholesale & Retail</a></li>
+          <li><a href="#">Privacy & Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="section-container footer-bottom-flex">
+        <span>© 2026 Chimp Soda Co. All Rights Reserved. Stay Wild.</span>
+        <span>Made with 100% Real Fizz & Zero Artificial Monkeys.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE FLAVOR QUIZ MODAL -->
+  <div class="modal-overlay" id="quiz-modal" aria-hidden="true">
+    <div class="quiz-modal-card">
+      <button type="button" class="modal-close-btn" id="quiz-close-btn" aria-label="Close Quiz">&times;</button>
+      
+      <!-- Quiz Header -->
+      <div class="quiz-header">
+        <span class="quiz-badge">🐒 PRIMAL VIBE QUIZ</span>
+        <h3 id="quiz-heading">Find Your Primal Soda Match</h3>
+        <p id="quiz-subheading">Answer 3 questions to unlock your spirit flavor.</p>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quiz-progress" style="width: 33%"></div>
+        </div>
+      </div>
+
+      <!-- Quiz Questions Stage -->
+      <div class="quiz-body" id="quiz-body">
+        <!-- Question Step 1 -->
+        <div class="quiz-step active" data-step="1">
+          <h4 class="quiz-question-title">1. What does your current brain battery feel like?</h4>
+          <div class="quiz-options">
+            <button type="button" class="quiz-option-btn" data-flavor-vote="banana">
+              <span class="opt-emoji">⚡</span>
+              <div class="opt-text">
+                <strong>Hyper-Focused & Electric</strong>
+                <small>Need smooth, creamy sustained inspiration</small>
+              </div>
+            </button>
+
+            <button type="button" class="quiz-option-btn" data-flavor-vote="berry">
+              <span class="opt-emoji">🧘</span>
+              <div class="opt-text">
+                <strong>Overstimulated & Chaotic</strong>
+                <small>Seeking antioxidant chill with deep bold berries</small>
+              </div>
+            </button>
+
+            <button type="button" class="quiz-option-btn" data-flavor-vote="citrus">
+              <span class="opt-emoji">😴</span>
+              <div class="opt-text">
+                <strong>Afternoon 2PM Slump</strong>
+                <small>Need an electric citrus slap to reboot my system</small>
+              </div>
+            </button>
+
+            <button type="button" class="quiz-option-btn" data-flavor-vote="mango">
+              <span class="opt-emoji">🌴</span>
+              <div class="opt-text">
+                <strong>Daydreaming of Tropical Escapes</strong>
+                <small>Craving lush, sun-soaked juicy escapism</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Step 2 -->
+        <div class="quiz-step" data-step="2">
+          <h4 class="quiz-question-title">2. Choose your ideal taste sensation:</h4>
+          <div class="quiz-options">
+            <button type="button" class="quiz-option-btn" data-flavor-vote="citrus">
+              <span class="opt-emoji">🍋</span>
+              <div class="opt-text">
+                <strong>Crisp, Sour & High Voltage</strong>
+                <small>Intense lime, yuzu, and sparkling effervescence</small>
+              </div>
+            </button>
+
+            <button type="button" class="quiz-option-btn" data-flavor-vote="mango">
+              <span class="opt-emoji">🥭</span>
+              <div class="opt-text">
+                <strong>Rich, Juicy & Exotic</strong>
+                <small>Sun-ripe mango pulp and tart passionfruit seeds</small>
+              </div>
+            </button>
+
+            <button type="button" class="quiz-option-btn" data-flavor-vote="banana">
+              <span class="opt-emoji">🍌</span>
+              <div class="opt-text">
+                <strong>Velvety, Creamy & Unexpected</strong>
+                <small>Sweet banana bread creaminess with a mint finish</small>
+              </div>
+            </button>
+
+            <button type="button" class="quiz-option-btn" data-flavor-vote="berry">
+              <span class="opt-emoji">🍓</span>
+              <div class="opt-text">
+                <strong>Jammy, Dark & Luscious</strong>
+                <small>Mountain raspberries, dragonfruit and rich velvet</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Step 3 -->
+        <div class="quiz-step" data-step="3">
+          <h4 class="quiz-question-title">3. Pick your spirit primate archetype:</h4>
+          <div class="quiz-options">
+            <button type="button" class="quiz-option-btn" data-flavor-vote="mango">
+              <span class="opt-emoji">🦍</span>
+              <div class="opt-text">
+                <strong>The Silverback Chieftain</strong>
+                <small>Unshakeable confidence and powerful charisma</small>
+              </div>
+            </button>
+
+            <button type="button" class="quiz-option-btn" data-flavor-vote="banana">
+              <span class="opt-emoji">🐒</span>
+              <div class="opt-text">
+                <strong>The Mad Scientist Chimp</strong>
+                <small>Eccentric creative who rewrites all the rules</small>
+              </div>
+            </button>
+
+            <button type="button" class="quiz-option-btn" data-flavor-vote="citrus">
+              <span class="opt-emoji">⚡</span>
+              <div class="opt-text">
+                <strong>The Cyber-Simian Rebel</strong>
+                <small>Moving at lightspeed with neon sunglasses</small>
+              </div>
+            </button>
+
+            <button type="button" class="quiz-option-btn" data-flavor-vote="berry">
+              <span class="opt-emoji">🌌</span>
+              <div class="opt-text">
+                <strong>The Mystic Jungle Shaman</strong>
+                <small>Deep thinker tuned to nature and ancient vibes</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Result Step -->
+        <div class="quiz-result" id="quiz-result" style="display: none;">
+          <div class="result-card">
+            <div class="result-image-wrap">
+              <img src="assets/banana.jpg" alt="Match Can" id="quiz-result-img" class="result-can-img">
+            </div>
+            <div class="result-details">
+              <span class="result-badge">MATCH CONFIRMED (99.4%)</span>
+              <h3 id="quiz-result-title">Psycho Banana Blitz</h3>
+              <p id="quiz-result-desc">
+                Your brain vibes with creamy banana decadence and Lion's Mane clarity. You thrive outside the ordinary box.
+              </p>
+              <div class="result-actions">
+                <button type="button" class="btn-primary-flavor" id="quiz-add-cart-btn">
+                  <span>Add 12-Pack to Cart • $34.99</span>
+                </button>
+                <button type="button" class="btn-secondary-hollow" id="quiz-retake-btn">
+                  <span>Retake Quiz</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE-OUT CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cart-overlay" aria-hidden="true">
+    <div class="cart-drawer" id="cart-drawer">
+      
+      <!-- Cart Header -->
+      <div class="cart-header">
+        <div class="cart-header-title">
+          <h3>YOUR PRIMAL STASH</h3>
+          <span class="cart-items-total" id="cart-header-count">0 items</span>
+        </div>
+        <button type="button" class="cart-close-btn" id="cart-close-btn" aria-label="Close Cart">&times;</button>
+      </div>
+
+      <!-- Free Shipping Progress -->
+      <div class="shipping-tracker">
+        <div class="shipping-text" id="shipping-message">
+          Add <strong>$40.00</strong> more for <strong>FREE WILD SHIPPING</strong> ⚡
+        </div>
+        <div class="shipping-bar">
+          <div class="shipping-fill" id="shipping-progress" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items List -->
+      <div class="cart-items-container" id="cart-items-list">
+        <!-- Dynamic Items rendered here -->
+        <div class="empty-cart-state" id="empty-cart-view">
+          <div class="empty-icon">🐒🥫</div>
+          <h4>Your stash is bone dry!</h4>
+          <p>No cold cans here yet. Pick a wild flavor and crack open your day.</p>
+          <button type="button" class="btn-primary-flavor" id="empty-cart-shop-btn">
+            <span>Explore Flavors</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Cart Footer / Summary -->
+      <div class="cart-footer" id="cart-footer">
+        <div class="promo-box">
+          <input type="text" placeholder="Promo code (try 'CHIMP15')" id="promo-input" class="promo-input">
+          <button type="button" id="apply-promo-btn" class="promo-btn">Apply</button>
+        </div>
+        <div class="promo-message" id="promo-feedback"></div>
+
+        <div class="cart-breakdown">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">$0.00</span>
+          </div>
+          <div class="summary-row" id="discount-row" style="display: none;">
+            <span>Troop Discount (15%)</span>
+            <span id="cart-discount" class="discount-val">-$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Wild Express Shipping</span>
+            <span id="cart-shipping">$5.99</span>
+          </div>
+          <div class="summary-row total-row">
+            <span>Estimated Total</span>
+            <span id="cart-total">$0.00</span>
+          </div>
+        </div>
+
+        <button type="button" class="checkout-btn" id="checkout-btn">
+          <span>PROCEED TO CHECKOUT</span>
+          <span class="checkout-arrow">→</span>
+        </button>
+
+        <div class="cart-guarantee">
+          <span>🔒 100% Satisfaction or Your Bananas Back Guarantee</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CHECKOUT SUCCESS MODAL -->
+  <div class="modal-overlay" id="checkout-modal" aria-hidden="true">
+    <div class="checkout-modal-card">
+      <div class="checkout-success-icon">🎉🐒</div>
+      <h3>ORDER CELEBRATION!</h3>
+      <p>
+        Boom! Your wild stash has been transmitted to our packaging primates. 
+        Your cans will be chilled, packed with dry ice and shipped via lightning express.
+      </p>
+      <div class="order-summary-box" id="checkout-summary-box">
+        <!-- Injected order summary -->
+      </div>
+      <button type="button" class="btn-primary-flavor" id="checkout-done-btn">
+        <span>Back To The Jungle</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
