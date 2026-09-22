@@ -1008,12 +1008,24 @@
     }
   });
 
-  // Ensure Hero Video autoplays
-  const heroVideo = document.querySelector('.hero-video-bg');
+  // Ensure Hero Video autoplays reliably
+  const heroVideo = document.getElementById('hero-bg-video') || document.querySelector('.hero-video-bg');
   if (heroVideo) {
-    heroVideo.play().catch(() => {
-      // Browser autoplay policy might require interaction, already muted and playsinline
-    });
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.setAttribute('muted', '');
+    heroVideo.setAttribute('playsinline', '');
+    heroVideo.setAttribute('webkit-playsinline', '');
+
+    const startVideo = () => {
+      heroVideo.play().catch(err => {
+        console.warn('Hero video autoplay deferred until user interaction:', err);
+      });
+    };
+
+    startVideo();
+    document.addEventListener('click', startVideo, { once: true });
+    document.addEventListener('touchstart', startVideo, { once: true });
   }
 
   console.log('🐒 Chimp Soda Engine initialized. Stay wild, stay fizzy!');
