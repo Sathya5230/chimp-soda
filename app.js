@@ -1008,5 +1008,13 @@
     }
   });
 
+  // Ensure Hero Video autoplays
+  const heroVideo = document.querySelector('.hero-video-bg');
+  if (heroVideo) {
+    heroVideo.play().catch(() => {
+      // Browser autoplay policy might require interaction, already muted and playsinline
+    });
+  }
+
   console.log('🐒 Chimp Soda Engine initialized. Stay wild, stay fizzy!');
 })();
